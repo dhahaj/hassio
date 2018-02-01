@@ -1,0 +1,9 @@
+
+Nexus6P:
+  hide_if_away: false
+  icon: mdi:android
+  mac:
+  name: Phone
+  picture:
+  track: true
+  vendor:

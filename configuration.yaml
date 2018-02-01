@@ -1,0 +1,77 @@
+homeassistant:
+          # Omitted values in this section will be auto detected using freegeoip.io
+  latitude: !secret home_lat
+  longitude: !secret home_lon
+  elevation: 660
+  name: Home
+  unit_system: imperial
+  time_zone: America/Chicago
+  temperature_unit: F
+  #customize: !include customize.yaml
+  
+config:
+
+http:
+  api_password: !secret http_password
+  base_url: http://dhahaj.duckdns.org:8123/
+  #use_x_forwarded_for: True
+  
+#recorder:
+#  purge_days: 21
+
+discovery:
+
+#shopping_list:
+
+updater:
+    # include_used_components: true
+
+# scripts:
+logbook: !include logbook.yaml
+
+# frontend:
+  # themes:
+    # greeny:
+      # primary-color: green
+    # black:
+      # primary-color: black
+    # bluesky:
+      # primary-color: blue
+    # purple:
+      # primary-color: purple
+ 
+sun:
+
+zone: !include zones.yaml
+
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://0.0.0.0:3218
+    
+notify:
+  - platform: pushbullet
+    name: pb
+    api_key: !secret pushbullet_api
+
+switch: 
+  - platform: tplink
+    host: 192.168.0.58
+    name: "TPLink"
+    
+camera:
+  - platform: rpi_camera
+    vertical_flip: 1
+    horizontal_flip: 1
+    image_quality: 6
+    file_path: /data/camera/pics.jpg
+    
+weblink:
+  entities:
+    - name: 'Remote Home Router'
+      url: https://75.1.37.24:21747/
+    - name: 'HomeAssistant.io'
+      url: https://home-assistant.io
+    - name: 'NodeMCU'
+      url: https://dhahaj.duckdns.org:8888/
