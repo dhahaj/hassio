@@ -14,20 +14,21 @@ config:
 http:
   api_password: !secret http_password
   base_url: http://dhahaj.duckdns.org:8123/
-  #use_x_forwarded_for: True
+  use_x_forwarded_for: True
   
 #recorder:
 #  purge_days: 21
 
 discovery:
 
-#shopping_list:
+shopping_list:
 
 updater:
     # include_used_components: true
 
 # scripts:
-logbook: !include logbook.yaml
+#logbook: !include logbook.yaml
+logger:
 
 # frontend:
   # themes:
@@ -65,7 +66,7 @@ camera:
     vertical_flip: 1
     horizontal_flip: 1
     image_quality: 6
-    file_path: /data/camera/pics.jpg
+    #file_path: /data/camera/pics.jpg
     
 weblink:
   entities:
