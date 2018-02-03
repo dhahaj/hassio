@@ -1,1 +1,6 @@
-
+device_tracker.nexus6p:
+  icon: mdi:android
+switch.tplink:
+  icon: mdi:lamp
+sensor.btc_exchange_rate:
+  icon: mdi:currency-btc
