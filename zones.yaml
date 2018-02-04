@@ -1,13 +1,12 @@
-# Zone Configurations
 - name: Home
   latitude: !secret home_lat
   longitude: !secret home_lon
-  radius: 50s
+  radius: 50
   icon: mdi:home
 
 - name: Work
   latitude: !secret work_lat
   longitude: !secret work_lon
   radius: 250
-  icon: mdi:worker
+  icon: mdi:account-multiple
 

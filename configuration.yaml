@@ -1,5 +1,4 @@
-homeassistant:
-          # Omitted values in this section will be auto detected using freegeoip.io
+HOMEAssistant:
   latitude: !secret home_lat
   longitude: !secret home_lon
   elevation: 660
@@ -7,9 +6,11 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   temperature_unit: F
-  #customize: !include customize.yaml
-  
+  customize: !include customize.yaml
+
 config:
+
+automations: !include automations.yaml
 
 http:
   api_password: !secret http_password
@@ -17,32 +18,57 @@ http:
   #use_x_forwarded_for: True
   
 #recorder:
-#  purge_days: 21
+#  purge_days: 4
 
-discovery:
+#discovery:
 
-#shopping_list:
+shopping_list:
 
 updater:
-    # include_used_components: true
+  include_used_components: true
 
-# scripts:
-logbook: !include logbook.yaml
+logbook:
 
-# frontend:
-  # themes:
-    # greeny:
-      # primary-color: green
-    # black:
-      # primary-color: black
-    # bluesky:
-      # primary-color: blue
-    # purple:
-      # primary-color: purple
+#history:        
+
+logger:
+  default: error
+
+scripts:
+
+#logbook: !include logbook.yaml
+
+#arduino:
+
+frontend:
+  themes:
+    greeny:
+      primary-color: green
+    black:
+      primary-color: black
+    bluesky:
+      primary-color: blue
+    purple:
+      primary-color: purple
  
+coinbase:
+  api_key: WZOKwtzSfHPa8ujD
+  api_secret: dKKtwAKvkg8hxxT4MxCayqR6j1RCypTm
+  exchange_rate_currencies:
+    - BTC
+    - ETH
+    - LTC
+    #- USD
+
 sun:
 
+map:
+
 zone: !include zones.yaml
+
+device_tracker:
+  - platform: gpslogger
+    password: !secret gpspass
 
 panel_iframe:
   configurator:
@@ -58,20 +84,22 @@ notify:
 switch: 
   - platform: tplink
     host: 192.168.0.58
-    name: "TPLink"
+    name: TPLink
+    icon: mdi:lamp
     
 camera:
   - platform: rpi_camera
+    name: RaspberryPi Cam
     vertical_flip: 1
     horizontal_flip: 1
-    image_quality: 6
-    file_path: /data/camera/pics.jpg
+    image_quality: 7
+    file_path: /tmp/camera.jpg
     
 weblink:
   entities:
-    - name: 'Remote Home Router'
+    - name: Remote Home Router
       url: https://75.1.37.24:21747/
-    - name: 'HomeAssistant.io'
+    - name: HomeAssistant.io
       url: https://home-assistant.io
-    - name: 'NodeMCU'
-      url: https://dhahaj.duckdns.org:8888/
+    - name: NodeMCU
+      url: http://dhahaj.duckdns.org:8888/

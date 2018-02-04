@@ -1,1 +1,26 @@
-
+device_tracker.nexus6p:
+  friendly_name: nexus6p
+switch.tplink:
+  icon: mdi:lamp
+group.all_devices:
+  entity_id:
+  - device_tracker.nexus6p
+sensor.coinbase_bch_wallet:
+  hidden: true
+sensor.coinbase_ltc_vault:
+  hidden: true
+camera.raspberry_pi_camera:
+  icon: mdi:camera
+sensor.usd_exchange_rate:
+  hidden: true
+  icon: mdi:cash
+weblink.homeassistantio:
+  icon: mdi:web
+weblink.remote_home_router:
+  icon: mdi:link
+sensor.coinbase_usd_wallet:
+  hidden: true
+sensor.coinbase_btc_wallet:
+  hidden: true
+sensor.ltc_exchange_rate:
+  custom_ui_state_card: LTC Rate

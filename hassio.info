@@ -1,0 +1,104 @@
+{
+    "result": "ok",
+    "data": {
+        "version": "0.85",
+        "last_version": "0.85",
+        "beta_channel": false,
+        "arch": "armhf",
+        "wait_boot": 5,
+        "timezone": "America/Chicago",
+        "addons": [
+            {
+                "name": "Configurator",
+                "slug": "core_configurator",
+                "description": "Browser-based configuration file editor for Home Assistant.",
+                "state": "started",
+                "version": "0.2.5",
+                "installed": "0.2.5",
+                "repository": "core",
+                "icon": false,
+                "logo": false
+            },
+            {
+                "name": "Git pull",
+                "slug": "core_git_pull",
+                "description": "Simple git pull to update the local configuration",
+                "state": "stopped",
+                "version": "4.0",
+                "installed": "4.0",
+                "repository": "core",
+                "icon": false,
+                "logo": true
+            },
+            {
+                "name": "Check Home Assistant configuration",
+                "slug": "core_check_config",
+                "description": "Check current Home Assistant configuration against a new version",
+                "state": "stopped",
+                "version": "0.7",
+                "installed": "0.7",
+                "repository": "core",
+                "icon": false,
+                "logo": true
+            },
+            {
+                "name": "SSH server",
+                "slug": "core_ssh",
+                "description": "Allows connections over SSH",
+                "state": "started",
+                "version": "3.0",
+                "installed": "3.0",
+                "repository": "core",
+                "icon": false,
+                "logo": true
+            },
+            {
+                "name": "Duck DNS",
+                "slug": "core_duckdns",
+                "description": "Free Dynamic DNS (DynDNS or DDNS) service with Let's Encrypt support",
+                "state": "started",
+                "version": "1.0",
+                "installed": "1.0",
+                "repository": "core",
+                "icon": false,
+                "logo": true
+            },
+            {
+                "name": "Google Assistant",
+                "slug": "core_google_assistant",
+                "description": "A virtual personal assistant developed by Google",
+                "state": "stopped",
+                "version": "0.0.3-p5",
+                "installed": "0.0.3-p5",
+                "repository": "core",
+                "icon": false,
+                "logo": true
+            },
+            {
+                "name": "DHCP server",
+                "slug": "core_dhcp_server",
+                "description": "A simple DHCP server",
+                "state": "started",
+                "version": "0.4",
+                "installed": "0.4",
+                "repository": "core",
+                "icon": false,
+                "logo": true
+            },
+            {
+                "name": "Samba share",
+                "slug": "core_samba",
+                "description": "Expose Hass.io folders with SMB/CIFS",
+                "state": "started",
+                "version": "3.0",
+                "installed": "3.0",
+                "repository": "core",
+                "icon": false,
+                "logo": true
+            }
+        ],
+        "addons_repositories": [
+            "https://github.com/home-assistant/hassio-addons-example"
+        ]
+    }
+}
