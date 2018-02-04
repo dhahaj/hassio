@@ -10,7 +10,7 @@ HOMEAssistant:
 
 config:
 
-automations: !include automations.yaml
+#automations: !include automations.yaml
 
 http:
   api_password: !secret http_password
@@ -32,7 +32,7 @@ logbook:
 #history:        
 
 logger:
-  default: error
+  default: warning
 
 scripts:
 
@@ -74,7 +74,7 @@ panel_iframe:
   configurator:
     title: Configurator
     icon: mdi:wrench
-    url: http://0.0.0.0:3218
+    url: http://hassio:3218
     
 notify:
   - platform: pushbullet
