@@ -1,4 +1,4 @@
-HOMEAssistant:
+homeassistant:
   latitude: !secret home_lat
   longitude: !secret home_lon
   elevation: 660
@@ -8,6 +8,8 @@ HOMEAssistant:
   temperature_unit: F
   customize: !include customize.yaml
 
+hassio:
+
 config:
 
 #automations: !include automations.yaml
@@ -15,7 +17,7 @@ config:
 http:
   api_password: !secret http_password
   base_url: http://dhahaj.duckdns.org:8123/
-  #use_x_forwarded_for: True
+  use_x_forwarded_for: True
   
 #recorder:
 #  purge_days: 4
@@ -75,6 +77,10 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: http://hassio:3218
+  ide:
+    title: IDE
+    icon: mdi:code-braces
+    url: http://192.168.0.194:8321
     
 notify:
   - platform: pushbullet
