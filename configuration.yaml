@@ -36,7 +36,8 @@ logbook:
 logger:
   default: warning
 
-scripts:
+python_scripts:
+        
 
 #logbook: !include logbook.yaml
 
