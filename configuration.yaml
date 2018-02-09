@@ -1,7 +1,7 @@
 homeassistant:
   latitude: !secret home_lat
   longitude: !secret home_lon
-  elevation: 675
+  elevation: 200
   name: Home
   unit_system: imperial
   time_zone: America/Chicago
