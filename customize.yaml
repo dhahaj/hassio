@@ -24,3 +24,5 @@ sensor.coinbase_btc_wallet:
   hidden: true
 sensor.ltc_exchange_rate:
   custom_ui_state_card: LTC Rate
+camera.raspberrypi_cam:
+  icon: mdi:camera
