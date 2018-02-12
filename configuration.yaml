@@ -24,14 +24,14 @@ http:
 
 #discovery:
 
-shopping_list:
+#shopping_list:
 
 updater:
   include_used_components: true
 
 logbook:
 
-#history:        
+history:        
 
 logger:
   default: warning
@@ -39,7 +39,7 @@ logger:
 #python_scripts:
         
 
-#logbook: !include logbook.yaml
+logbook: !include logbook.yaml
 
 #arduino:
 
