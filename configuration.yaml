@@ -12,15 +12,24 @@ hassio:
 
 config:
 
-#automations: !include automations.yaml
+automations:
+#  - alias: purger
+  action:
+    service: recorder_purge
+    data:
+      keep_days: 5
+
+
+#!include automations.yaml
 
 http:
   api_password: !secret http_password
   base_url: http://dhahaj.duckdns.org:8123/
   use_x_forwarded_for: True
   
-#recorder:
-#  purge_days: 4
+recorder:
+  purge_keep_days: 5
+
 
 #discovery:
 
@@ -29,15 +38,14 @@ http:
 updater:
   include_used_components: true
 
-logbook:
+#logbook:
 
-history:        
+#history:        
 
-logger:
-  default: warning
+#logger:
+#  default: warning
 
 #python_scripts:
-        
 
 logbook: !include logbook.yaml
 

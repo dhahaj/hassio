@@ -1,3 +1,4 @@
-2018-02-12 15:39:59 ERROR (SyncWorker_0) [homeassistant.util.yaml] YAML file /config/configuration.yaml contains duplicate key "logbook". Check lines 31 and 41.
-2018-02-12 15:40:11 WARNING (MainThread) [homeassistant.components.recorder] From version 0.64.0 the 'recorder' component will by default purge data older than 10 days. To keep data longer you must configure 'purge_keep_days' or 'purge_interval'.
-2018-02-12 15:44:50 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-02-15 14:45:06 ERROR (MainThread) [homeassistant.loader] Unable to find component automations
+2018-02-15 14:45:07 ERROR (MainThread) [homeassistant.setup] Setup failed for automations: Component not found.
+2018-02-15 14:50:48 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-02-15 15:53:02 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
