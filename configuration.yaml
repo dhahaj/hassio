@@ -8,32 +8,31 @@ homeassistant:
   temperature_unit: F
   customize: !include customize.yaml
 
-hassio:
 
 config:
 
-automations:
+hassio:
+
+automation:
 #  - alias: purger
   action:
     service: recorder_purge
     data:
       keep_days: 5
 
-
 #!include automations.yaml
 
 http:
   api_password: !secret http_password
   base_url: http://dhahaj.duckdns.org:8123/
-  use_x_forwarded_for: True
+  #use_x_forwarded_for: True
   
 recorder:
   purge_keep_days: 5
 
-
 #discovery:
 
-#shopping_list:
+shopping_list:
 
 updater:
   include_used_components: true
@@ -79,6 +78,7 @@ zone: !include zones.yaml
 
 device_tracker:
   - platform: gpslogger
+    icon: mdi:android
     password: !secret gpspass
 
 panel_iframe:
@@ -89,7 +89,7 @@ panel_iframe:
   ide:
     title: IDE
     icon: mdi:code-braces
-    url: http://192.168.0.194:8321
+    url: http://hassio:8321
     
 notify:
   - platform: pushbullet
@@ -107,8 +107,8 @@ camera:
     name: RaspberryPi Cam
     vertical_flip: 1
     horizontal_flip: 1
-    image_quality: 7
-    file_path: /tmp/camera.jpg
+    image_quality: 5
+    #file_path: /tmp/camera.jpg
     
 weblink:
   entities:
