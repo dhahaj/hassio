@@ -14,11 +14,18 @@ config:
 hassio:
 
 automation:
-#  - alias: purger
-  action:
-    service: recorder_purge
+  - alias: LogController
+    action:
+      service: recorder_purge
     data:
-      keep_days: 5
+      keep_days: 4
+    trigger:
+      platform: time
+      # Matches every hour at 5 minutes past whole
+      minutes: 5
+      seconds: 00
+    hide_entity: True
+    initial_state: True
 
 #!include automations.yaml
 
