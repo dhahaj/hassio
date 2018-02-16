@@ -8,7 +8,6 @@ homeassistant:
   temperature_unit: F
   customize: !include customize.yaml
 
-
 config:
 
 hassio:
@@ -22,7 +21,8 @@ automation:
     trigger:
       platform: time
       # Matches every hour at 5 minutes past whole
-      minutes: 5
+      hours: 24
+      minutes: 00
       seconds: 00
     hide_entity: True
     initial_state: True
@@ -108,7 +108,14 @@ switch:
     host: 192.168.0.58
     name: TPLink
     icon: mdi:lamp
-    
+#  - platform: broadlink
+   # host: 192.168.0.225
+    #mac: '34:ea:34:58:b9:5c'
+    #friendly_name: RM Mini3
+    #type: rm_mini
+    #switches:
+      
+
 camera:
   - platform: rpi_camera
     name: RaspberryPi Cam
