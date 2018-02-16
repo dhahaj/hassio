@@ -12,22 +12,22 @@ config:
 
 hassio:
 
-automation:
-  - alias: LogController
-    action:
-      service: recorder_purge
-    data:
-      keep_days: 4
-    trigger:
-      platform: time
+# automation:
+  # - alias: LogController
+    # action:
+      # service: recorder_purge
+    # data:
+      # keep_days: 4
+    # trigger:
+      # platform: time
       # Matches every hour at 5 minutes past whole
-      hours: 24
-      minutes: 00
-      seconds: 00
-    hide_entity: True
-    initial_state: True
+      # hours: 24
+      # minutes: 00
+      # seconds: 00
+    # hide_entity: True
+    # initial_state: True
 
-#!include automations.yaml
+automation: !include automations.yaml
 
 http:
   api_password: !secret http_password
@@ -44,9 +44,7 @@ shopping_list:
 updater:
   include_used_components: true
 
-#logbook:
-
-#history:        
+history:
 
 #logger:
 #  default: warning
@@ -96,8 +94,8 @@ panel_iframe:
   ide:
     title: IDE
     icon: mdi:code-braces
-    url: http://hassio:8321
-    
+    url: http://127.0.0.1:80
+
 notify:
   - platform: pushbullet
     name: pb
@@ -115,7 +113,6 @@ switch:
     #type: rm_mini
     #switches:
       
-
 camera:
   - platform: rpi_camera
     name: RaspberryPi Cam
