@@ -27,7 +27,7 @@ hassio:
     # hide_entity: True
     # initial_state: True
 
-automation: !include automations.yaml
+automation: !include_dir_merge_list automations.yaml
 
 http:
   api_password: !secret http_password
@@ -43,6 +43,8 @@ shopping_list:
 
 updater:
   include_used_components: true
+
+#logbook:
 
 history:
 
@@ -95,7 +97,7 @@ panel_iframe:
     title: IDE
     icon: mdi:code-braces
     url: http://127.0.0.1:80
-
+    
 notify:
   - platform: pushbullet
     name: pb
