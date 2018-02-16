@@ -15,13 +15,15 @@ sensor.usd_exchange_rate:
   hidden: true
   icon: mdi:cash
 weblink.homeassistantio:
-  icon: mdi:web
-weblink.remote_home_router:
   icon: mdi:link
+weblink.remote_home_router:
+  icon: mdi:network
 sensor.coinbase_usd_wallet:
   hidden: true
   icon: mdi:cash
 sensor.coinbase_btc_wallet:
   hidden: true
-#sensor.ltc_exchange_rate:
-#/dlcustom_ui_state_card: LTC Rate
+sun.sun:
+  icon: mdi:cloud
+weblink.nodemcu:
+  icon: mdi:help

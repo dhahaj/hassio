@@ -1,4 +1,0 @@
-2018-02-15 14:45:06 ERROR (MainThread) [homeassistant.loader] Unable to find component automations
-2018-02-15 14:45:07 ERROR (MainThread) [homeassistant.setup] Setup failed for automations: Component not found.
-2018-02-15 14:50:48 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
-2018-02-15 15:53:02 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
