@@ -1,0 +1,39 @@
+- alias: Automation 1
+  trigger:
+    platform: time
+    at: '17:00'
+  action:
+    service: notify.pb
+    data:
+      message: It's 5PM!
+      # title: Go Home!
+
+- alias: Lights On
+  trigger:
+    platform: state
+    entity_id: sun.sun
+    from: 'above_horizon'
+  action:
+    service: notify.pb
+    title: Lights On
+    message: Turned OFF TPLink
+  
+- alias: Not Home
+  trigger:
+    platform: state
+    entity_id: device_tracker.nexus6p
+    from: 'home'
+  action:
+    service: notify.pb
+    # title: Notification
+    message: Phone Left Home
+  
+- alias: Home
+  trigger:
+    platform: state
+    entity_id: device_tracker.nexus6p
+    to: 'home'
+  action:
+    service: notify.pb
+    # title: Notification
+    message: Phone Returned Home
