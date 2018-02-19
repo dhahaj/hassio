@@ -1,0 +1,19 @@
+2018-02-17 19:59:57 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-02-17 20:03:55 ERROR (MainThread) [frontend.js.es5.201802090] :0:0 Script error.
+2018-02-17 20:04:01 ERROR (MainThread) [frontend.js.es5.201802090] :0:0 Script error.
+2018-02-17 20:04:01 ERROR (MainThread) [frontend.js.es5.201802090] :0:0 Script error.
+2018-02-17 20:04:03 ERROR (MainThread) [frontend.js.es5.201802090] :0:0 Script error.
+2018-02-17 20:11:28 ERROR (MainThread) [frontend.js.es5.201802090] :0:0 Script error.
+2018-02-17 20:11:30 ERROR (MainThread) [frontend.js.es5.201802090] :0:0 Script error.
+2018-02-18 08:18:57 WARNING (MainThread) [homeassistant.helpers.entity] Update of sensor.coinbase_eth_wallet is taking over 10 seconds
+2018-02-18 08:19:18 WARNING (MainThread) [homeassistant.components.sensor] Updating coinbase sensor took longer than the scheduled update interval 0:00:30
+2018-02-18 08:19:49 WARNING (MainThread) [homeassistant.components.sensor] Updating coinbase sensor took longer than the scheduled update interval 0:00:30
+2018-02-18 08:20:20 WARNING (MainThread) [homeassistant.components.sensor] Updating coinbase sensor took longer than the scheduled update interval 0:00:30
+2018-02-18 08:20:51 WARNING (MainThread) [homeassistant.components.sensor] Updating coinbase sensor took longer than the scheduled update interval 0:00:30
+2018-02-18 08:20:55 ERROR (SyncWorker_6) [homeassistant.components.coinbase] Authentication error connecting to coinbase: APIError(id=authentication_error): request timestamp expired
+2018-02-18 12:58:47 ERROR (MainThread) [aiohttp.server] Error handling request
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/aiohttp/web_protocol.py", line 272, in data_received
+    messages, upgraded, tail = self._request_parser.feed_data(data)
+  File "aiohttp\_http_parser.pyx", line 295, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadStatusLine: invalid HTTP method
