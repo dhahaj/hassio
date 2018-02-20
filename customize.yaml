@@ -27,3 +27,17 @@ sun.sun:
   icon: mdi:cloud
 weblink.nodemcu:
   icon: mdi:help
+group.all_automations:
+  assumed_state: true
+  entity_id:
+  - automations.
+group.all_switches: {}
+automation.homeassistant_notification:
+  icon: mdi:home
+  initial_state: 'on'
+automation.dexie_notification:
+  icon: mdi:cat
+  initial_state: 'on'
+automation.zone_notification:
+  icon: mdi:car
+  initial_state: 'on'

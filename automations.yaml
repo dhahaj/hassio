@@ -1,0 +1,60 @@
+#########################################
+##  ZONE CHANGE NOTIFICATIONS
+#########################################
+- action:
+  - data:
+      message: Zone Change Notification
+      title: Zone Notification
+    service: notify.pb
+  id: '1519084803422'
+  alias: Zone Notification
+  condition: []
+  trigger:
+  - entity_id: device_tracker.nexus6p
+    event: enter
+    platform: zone
+    zone: zone.home
+  - entity_id: device_tracker.nexus6p
+    event: enter
+    platform: zone
+    zone: zone.work
+  - entity_id: device_tracker.nexus6p
+    event: leave
+    platform: zone
+    zone: zone.home
+  - entity_id: device_tracker.nexus6p
+    event: leave
+    platform: zone
+    zone: zone.work
+
+#########################################
+##  HOMEASSISTANT NOTIFICATIONS
+#########################################
+- action:
+  - data:
+      message: HomeAssistant Started
+      title: HomeAssistant Notification
+    service: notify.pb
+  alias: HomeAssistant Notification
+  condition: []
+  id: '1519084809287'
+  trigger:
+  - event: start
+    platform: homeassistant
+
+#########################################
+##  DEXIE NOTIFICATIONS
+#########################################
+- action:
+  - data:
+      message: Time to give Dexie her insulin shot.
+      title: Dexie's Insulin Reminder
+    service: notify.pb
+  alias: Dexie Notification
+  condition: []
+  id: '1519085145538'
+  trigger:
+  - at: 07:30
+    platform: time
+  - at: '19:30'
+    platform: time

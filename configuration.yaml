@@ -12,50 +12,31 @@ config:
 
 hassio:
 
-# automation:
-  # - alias: LogController
-    # action:
-      # service: recorder_purge
-    # data:
-      # keep_days: 4
-    # trigger:
-      # platform: time
-      # Matches every hour at 5 minutes past whole
-      # hours: 24
-      # minutes: 00
-      # seconds: 00
-    # hide_entity: True
-    # initial_state: True
-
-automation: !include_dir_merge_list automations.yaml
+automation: !include automations.yaml
 
 http:
   api_password: !secret http_password
   base_url: http://dhahaj.duckdns.org:8123/
-  #use_x_forwarded_for: True
+  use_x_forwarded_for: True
   
 recorder:
-  purge_keep_days: 5
+  purge_keep_days: 4
 
 #discovery:
 
-shopping_list:
+# shopping_list:
 
 updater:
   include_used_components: true
 
-#logbook:
-
 history:
 
-#logger:
-#  default: warning
+logger:
+  default: error
+  logs:
+    homeassistant.components.switch.hook: debug
 
-#python_scripts:
-
-logbook: !include logbook.yaml
-
-#arduino:
+# logbook: !include logbook.yaml
 
 frontend:
   themes:
@@ -67,21 +48,26 @@ frontend:
       primary-color: blue
     purple:
       primary-color: purple
+    orange:
+      primary-color: orange
  
 coinbase:
-  api_key: WZOKwtzSfHPa8ujD
-  api_secret: dKKtwAKvkg8hxxT4MxCayqR6j1RCypTm
+  api_key: !secret cb_key
+  api_secret: !secret cb_secret
   exchange_rate_currencies:
     - BTC
     - ETH
     - LTC
-    #- USD
 
 sun:
 
 map:
 
 zone: !include zones.yaml
+
+usps:
+  username: !secret usps_username
+  password: !secret usps_password
 
 device_tracker:
   - platform: gpslogger
@@ -92,7 +78,7 @@ panel_iframe:
   configurator:
     title: Configurator
     icon: mdi:wrench
-    url: http://hassio:3218
+    url: http://127.0.0.1:3218
   ide:
     title: IDE
     icon: mdi:code-braces
@@ -107,13 +93,9 @@ switch:
   - platform: tplink
     host: 192.168.0.58
     name: TPLink
-    icon: mdi:lamp
-#  - platform: broadlink
-   # host: 192.168.0.225
-    #mac: '34:ea:34:58:b9:5c'
-    #friendly_name: RM Mini3
-    #type: rm_mini
-    #switches:
+  - platform: hook
+    name: Hook
+    token: !secret hook_token
       
 camera:
   - platform: rpi_camera
@@ -122,6 +104,8 @@ camera:
     horizontal_flip: 1
     image_quality: 5
     #file_path: /tmp/camera.jpg
+  - platform: usps
+    scan_interval: 10
     
 weblink:
   entities:
@@ -131,3 +115,20 @@ weblink:
       url: https://home-assistant.io
     - name: NodeMCU
       url: http://dhahaj.duckdns.org:8888/
+
+android_ip_webcam:
+  - host: 192.168.0.166
+    port: 8080
+    name: AndroidWebCam
+    scan_interval: 10
+    sensors:
+      - audio_connections
+      - battery_level
+      - motion
+    switches:
+      - focus
+      - night_vision
+      - overlay
+      - torch
+      - video_recording
+    # motion_sensor:
