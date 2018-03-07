@@ -18,7 +18,10 @@ http:
   api_password: !secret http_password
   base_url: http://dhahaj.duckdns.org:8123/
   use_x_forwarded_for: True
-  
+
+sensor:
+  platform: example
+
 recorder:
   purge_keep_days: 4
 
@@ -96,7 +99,7 @@ switch:
   - platform: hook
     name: Hook
     token: !secret hook_token
-      
+
 camera:
   - platform: rpi_camera
     name: RaspberryPi Cam
@@ -106,7 +109,7 @@ camera:
     #file_path: /tmp/camera.jpg
   - platform: usps
     scan_interval: 10
-    
+
 weblink:
   entities:
     - name: Remote Home Router
@@ -115,6 +118,8 @@ weblink:
       url: https://home-assistant.io
     - name: NodeMCU
       url: http://dhahaj.duckdns.org:8888/
+    - name: IDE
+      url: http://dhahaj.duckdns.org/ide.html
 
 android_ip_webcam:
   - host: 192.168.0.166

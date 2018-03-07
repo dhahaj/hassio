@@ -2,15 +2,16 @@ device_tracker.nexus6p:
   friendly_name: nexus6p
 switch.tplink:
   icon: mdi:lamp
-group.all_devices:
-  entity_id:
-  - device_tracker.nexus6p
 sensor.coinbase_bch_wallet:
   hidden: true
 sensor.coinbase_ltc_vault:
   hidden: true
 camera.raspberry_pi_camera:
   icon: mdi:camera
+  view: false
+  hidden: true
+camera.androidwebcam:
+  icon: mdi:android
 sensor.usd_exchange_rate:
   hidden: true
   icon: mdi:cash
@@ -27,17 +28,40 @@ sun.sun:
   icon: mdi:cloud
 weblink.nodemcu:
   icon: mdi:help
-group.all_automations:
-  assumed_state: true
+group.all_devices:
   entity_id:
-  - automations.
-group.all_switches: {}
+  - device_tracker.nexus6p
+group.all_switches:
+  entity_id:
+  - switch.tplink
+  - switch.remote_1
+  - switch.remote_2
+  - switch.remote_3
+  friendly_name: Switches
+  icon: mdi:lightbulb
+  view: true
 automation.homeassistant_notification:
   icon: mdi:home
-  initial_state: 'on'
+  initial_state: 'off'
 automation.dexie_notification:
   icon: mdi:cat
   initial_state: 'on'
 automation.zone_notification:
   icon: mdi:car
   initial_state: 'on'
+sensor.androidwebcam_audio_connections:
+  hidden: true
+switch.androidwebcam_overlay:
+  hidden: false
+  view: false
+switch.androidwebcam_video_recording: {}
+switch.androidwebcam_night_vision: {}
+switch.androidwebcam_focus: {}
+switch.androidwebcam_torch:
+  hidden: true
+  view: false
+camera.raspberrypi_cam:
+  hidden: true
+  icon: mdi:raspberrypi
+sensor.androidwebcam_battery_level:
+  homebridge_name: AndroidWebCam Battery Level

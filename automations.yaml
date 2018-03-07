@@ -54,7 +54,7 @@
   condition: []
   id: '1519085145538'
   trigger:
-  - at: 07:30
+  - at: '07:30'
     platform: time
   - at: '19:30'
     platform: time
