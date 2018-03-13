@@ -20,7 +20,6 @@ weblink.homeassistantio:
 weblink.remote_home_router:
   icon: mdi:network
 sensor.coinbase_usd_wallet:
-  hidden: true
   icon: mdi:cash
 sensor.coinbase_btc_wallet:
   hidden: true
@@ -48,7 +47,7 @@ automation.dexie_notification:
   initial_state: 'on'
 automation.zone_notification:
   icon: mdi:car
-  initial_state: 'on'
+  initial_state: 'off'
 sensor.androidwebcam_audio_connections:
   hidden: true
 switch.androidwebcam_overlay:
