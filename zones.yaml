@@ -10,3 +10,8 @@
   radius: 250
   icon: mdi:account-multiple
 
+- name: HEB
+  latitude: 29.71343
+  longitude: -98.1600
+  radius: 150
+
