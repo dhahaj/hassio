@@ -34,4 +34,4 @@ class ExampleSensor(Entity):
 
         This is the only method that should fetch new data for Home Assistant.
         """
-        self._state = 23
+        self._state = 66
