@@ -68,9 +68,9 @@ map:
 
 zone: !include zones.yaml
 
-usps:
-  username: !secret usps_username
-  password: !secret usps_password
+#usps:
+# username: !secret usps_username
+#  password: !secret usps_password
 
 device_tracker:
   - platform: gpslogger
@@ -107,8 +107,8 @@ camera:
     horizontal_flip: 1
     image_quality: 5
     #file_path: /tmp/camera.jpg
-  - platform: usps
-    scan_interval: 10
+    #  - platform: usps
+    #scan_interval: 10
 
 weblink:
   entities:
@@ -121,19 +121,19 @@ weblink:
     - name: IDE
       url: http://dhahaj.duckdns.org/ide.html
 
-android_ip_webcam:
-  - host: 192.168.0.166
-    port: 8080
-    name: AndroidWebCam
-    scan_interval: 10
-    sensors:
-      - audio_connections
-      - battery_level
-      - motion
-    switches:
-      - focus
-      - night_vision
-      - overlay
-      - torch
-      - video_recording
+      #android_ip_webcam:
+      #  - host: 192.168.0.166
+      #    port: 8080
+      #    name: AndroidWebCam
+      #    scan_interval: 10
+      #    sensors:
+      #      - audio_connections
+      #      - battery_level
+      #      - motion
+      #    switches:
+      #      - focus
+      #      - night_vision
+      #      - overlay
+      #      - torch
+      #      - video_recording
     # motion_sensor:
