@@ -6,12 +6,6 @@ sensor.coinbase_bch_wallet:
   hidden: true
 sensor.coinbase_ltc_vault:
   hidden: true
-camera.raspberry_pi_camera:
-  icon: mdi:camera
-  view: false
-  hidden: true
-camera.androidwebcam:
-  icon: mdi:android
 sensor.usd_exchange_rate:
   hidden: true
   icon: mdi:cash
@@ -36,7 +30,7 @@ group.all_switches:
   - switch.remote_1
   - switch.remote_2
   - switch.remote_3
-  friendly_name: Switches
+  friendly_name: Hook Switches
   icon: mdi:lightbulb
   view: true
 automation.homeassistant_notification:
@@ -48,19 +42,9 @@ automation.dexie_notification:
 automation.zone_notification:
   icon: mdi:car
   initial_state: 'off'
-sensor.androidwebcam_audio_connections:
-  hidden: true
-switch.androidwebcam_overlay:
-  hidden: false
-  view: false
-switch.androidwebcam_video_recording: {}
-switch.androidwebcam_night_vision: {}
-switch.androidwebcam_focus: {}
-switch.androidwebcam_torch:
-  hidden: true
-  view: false
-camera.raspberrypi_cam:
-  hidden: true
-  icon: mdi:raspberrypi
-sensor.androidwebcam_battery_level:
-  homebridge_name: AndroidWebCam Battery Level
+switch.kitchen_lights:
+  icon: mdi:food
+switch.spare_bedroom:
+  icon: mdi:sleep
+switch.shelf_light:
+  icon: mdi:lamp

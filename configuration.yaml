@@ -19,8 +19,8 @@ http:
   base_url: http://dhahaj.duckdns.org:8123/
   use_x_forwarded_for: True
 
-sensor:
-  platform: example
+# sensor:
+#   platform: example
 
 recorder:
   purge_keep_days: 4
@@ -82,10 +82,10 @@ panel_iframe:
     title: Configurator
     icon: mdi:wrench
     url: http://127.0.0.1:3218
-  ide:
-    title: IDE
-    icon: mdi:code-braces
-    url: http://127.0.0.1:80
+#   ide:
+#     title: IDE
+#     icon: mdi:code-braces
+#     url: http://127.0.0.1:80
     
 notify:
   - platform: pushbullet
@@ -94,18 +94,18 @@ notify:
 
 switch: 
   - platform: tplink
-    host: 192.168.0.58
-    name: TPLink
+    host: 192.168.1.165
+    name: HS100
   - platform: hook
     name: Hook
     token: !secret hook_token
 
-camera:
-  - platform: rpi_camera
-    name: RaspberryPi Cam
-    vertical_flip: 1
-    horizontal_flip: 1
-    image_quality: 5
+# camera:
+#   - platform: rpi_camera
+#     name: RaspberryPi Cam
+#     vertical_flip: 1
+#     horizontal_flip: 1
+#     image_quality: 5
     #file_path: /tmp/camera.jpg
     #  - platform: usps
     #scan_interval: 10
@@ -118,8 +118,10 @@ weblink:
       url: https://home-assistant.io
     - name: NodeMCU
       url: http://dhahaj.duckdns.org:8888/
-    - name: IDE
-      url: http://dhahaj.duckdns.org/ide.html
+    - name: Archer-C9
+      url: http://192.168.0.173:9090
+    # - name: IDE
+    #   url: http://dhahaj.duckdns.org/ide.html
 
       #android_ip_webcam:
       #  - host: 192.168.0.166
