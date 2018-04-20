@@ -139,3 +139,12 @@ weblink:
       #      - torch
       #      - video_recording
     # motion_sensor:
+
+panel_custom:
+  - name: react
+    sidebar_title: TodoMVC
+    sidebar_icon: mdi:work
+    url_path: todomvc
+    config:
+      title: hello
+
