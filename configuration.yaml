@@ -99,6 +99,10 @@ switch:
   - platform: hook
     name: Hook
     token: !secret hook_token
+  - platform: rpi_gpio
+    ports:
+      17: switch17
+
 
 # camera:
 #   - platform: rpi_camera
