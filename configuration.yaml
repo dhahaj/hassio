@@ -146,9 +146,8 @@ weblink:
 
 panel_custom:
   - name: react
-    sidebar_title: TodoMVC
-    sidebar_icon: mdi:work
-    url_path: todomvc
+    sidebar_title: Example
+    sidebar_icon: mdi:checkbox-marked-outline
+    # url_path: todomvc
     config:
-      title: hello
-
+      title: Wow hello!
