@@ -4,6 +4,8 @@ switch.tplink:
   icon: mdi:lamp
 sensor.coinbase_bch_wallet:
   hidden: true
+sensor.coinbase_ltc_wallet:
+  hidden: false
 sensor.coinbase_ltc_vault:
   hidden: true
 sensor.usd_exchange_rate:

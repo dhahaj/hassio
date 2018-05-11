@@ -59,6 +59,7 @@ coinbase:
   api_secret: !secret cb_secret
   exchange_rate_currencies:
     - BTC
+    - BCH
     - ETH
     - LTC
 
@@ -77,11 +78,11 @@ device_tracker:
     icon: mdi:android
     password: !secret gpspass
 
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: http://127.0.0.1:3218
+# panel_iframe:
+#   configurator:
+#     title: Configurator
+#     icon: mdi:wrench
+#     url: http://127.0.0.1:3218
 #   ide:
 #     title: IDE
 #     icon: mdi:code-braces
@@ -94,7 +95,7 @@ notify:
 
 switch: 
   - platform: tplink
-    host: 192.168.1.165
+    host: 192.168.0.173
     name: HS100
   - platform: hook
     name: Hook
@@ -121,9 +122,9 @@ weblink:
     - name: HomeAssistant.io
       url: https://home-assistant.io
     - name: NodeMCU
-      url: http://dhahaj.duckdns.org:8888/
+      url: http://dhahaj.duckdns.org:7777/
     - name: Archer-C9
-      url: http://192.168.0.173:9090
+      url: http://dhahaj.duckdns.org:9090/
     # - name: IDE
     #   url: http://dhahaj.duckdns.org/ide.html
 
@@ -146,7 +147,7 @@ weblink:
 
 panel_custom:
   - name: react
-    sidebar_title: Example
+    sidebar_title: Example Panel
     sidebar_icon: mdi:checkbox-marked-outline
     # url_path: todomvc
     config:
