@@ -102,7 +102,16 @@ switch:
     token: !secret hook_token
   - platform: rpi_gpio
     ports:
-      17: switch17
+      17: switch
+
+binary_sensor:
+  - platform: rpi_gpio
+   # pull_mode: up
+   # invert_logic: false
+    ports:
+   #  4: IRSensor
+     3: pin3
+   #  2: pin2
 
 
 # camera:

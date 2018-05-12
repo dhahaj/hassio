@@ -50,3 +50,8 @@ switch.spare_bedroom:
   icon: mdi:sleep
 switch.shelf_light:
   icon: mdi:lamp
+binary_sensor.irsensor:
+  icon: mdi:walk
+binary_sensor.pin3:
+  device_class: motion
+  friendly_name: IR Sensor

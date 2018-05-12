@@ -1,6 +1,3 @@
-#########################################
-##  ZONE CHANGE NOTIFICATIONS
-#########################################
 - action:
   - data:
       message: Zone Change Notification
@@ -26,10 +23,6 @@
     event: leave
     platform: zone
     zone: zone.work
-
-#########################################
-##  HOMEASSISTANT NOTIFICATIONS
-#########################################
 - action:
   - data:
       message: HomeAssistant Started
@@ -41,10 +34,6 @@
   trigger:
   - event: start
     platform: homeassistant
-
-#########################################
-##  DEXIE NOTIFICATIONS
-#########################################
 - action:
   - data:
       message: Time to give Dexie her insulin shot.
@@ -54,7 +43,21 @@
   condition: []
   id: '1519085145538'
   trigger:
-  - at: '07:30'
+  - at: 07:30
     platform: time
   - at: '19:30'
     platform: time
+- id: '1526082360186'
+  alias: IR Motion
+  trigger:
+  - entity_id: binary_sensor.pin3
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - alias: ''
+    data:
+      message: motion
+      title: IR Sensor
+    service: notify.pb
