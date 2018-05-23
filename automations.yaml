@@ -23,6 +23,7 @@
     event: leave
     platform: zone
     zone: zone.work
+
 - action:
   - data:
       message: HomeAssistant Started
@@ -34,6 +35,7 @@
   trigger:
   - event: start
     platform: homeassistant
+
 - action:
   - data:
       message: Time to give Dexie her insulin shot.
@@ -47,6 +49,7 @@
     platform: time
   - at: '19:30'
     platform: time
+
 - id: '1526082360186'
   alias: IR Motion
   trigger:
@@ -54,10 +57,30 @@
     from: 'off'
     platform: state
     to: 'on'
-  condition: []
+  condition:
+  - condition: zone
+    entity_id: device_tracker.nexus6p
+    zone: zone.home
   action:
-  - alias: ''
-    data:
-      message: motion
-      title: IR Sensor
+  - data:
+      entity_id: switch.pin18
+    service: switch.toggle
+
+- action:
+  - data:
+      message: Coinbase wallet change!
+      title: LTC Wallet
     service: notify.pb
+  id: '1526141197358'
+  alias: LTC Wallet
+  trigger:
+  - below: '.01'
+    entity_id: sensor.coinbase_ltc_wallet
+    platform: numeric_state
+  - below: '.01'
+    entity_id: sensor.coinbase_bch_wallet
+    platform: numeric_state
+  - below: '.01'
+    entity_id: sensor.coinbase_eth_wallet
+    platform: numeric_state
+  condition: []

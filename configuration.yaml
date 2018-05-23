@@ -19,14 +19,10 @@ http:
   base_url: http://dhahaj.duckdns.org:8123/
   use_x_forwarded_for: True
 
-# sensor:
-#   platform: example
-
 recorder:
-  purge_keep_days: 4
+  purge_keep_days: 2
 
 #discovery:
-
 # shopping_list:
 
 updater:
@@ -64,29 +60,28 @@ coinbase:
     - LTC
 
 sun:
-
 map:
-
 zone: !include zones.yaml
-
-#usps:
-# username: !secret usps_username
-#  password: !secret usps_password
 
 device_tracker:
   - platform: gpslogger
     icon: mdi:android
     password: !secret gpspass
 
-# panel_iframe:
-#   configurator:
-#     title: Configurator
-#     icon: mdi:wrench
-#     url: http://127.0.0.1:3218
-#   ide:
-#     title: IDE
-#     icon: mdi:code-braces
-#     url: http://127.0.0.1:80
+panel_iframe:
+  ide:
+    title: IDE
+    icon: mdi:code-braces
+    url: http://dhahaj.duckdns.org:8321
+    # url: http://192.168.0.194:8321
+  sincos:
+    title: SinCos
+    icon: mdi:buddhism
+    url: https://www.openprocessing.org/sketch/544500#
+  router_remote:
+    title: TP-Link
+    icon: mdi:access-point-network
+    url: http://dhahaj.duckdns.org:9090
     
 notify:
   - platform: pushbullet
@@ -102,28 +97,15 @@ switch:
     token: !secret hook_token
   - platform: rpi_gpio
     ports:
-      17: switch
+      18: pin18
 
 binary_sensor:
   - platform: rpi_gpio
-   # pull_mode: up
+    pull_mode: DOWN
    # invert_logic: false
     ports:
-   #  4: IRSensor
      3: pin3
-   #  2: pin2
-
-
-# camera:
-#   - platform: rpi_camera
-#     name: RaspberryPi Cam
-#     vertical_flip: 1
-#     horizontal_flip: 1
-#     image_quality: 5
-    #file_path: /tmp/camera.jpg
-    #  - platform: usps
-    #scan_interval: 10
-
+    
 weblink:
   entities:
     - name: Remote Home Router
@@ -136,6 +118,61 @@ weblink:
       url: http://dhahaj.duckdns.org:9090/
     # - name: IDE
     #   url: http://dhahaj.duckdns.org/ide.html
+
+alarm_control_panel:
+  - platform: manual_mqtt
+    state_topic: home/alarm
+    command_topic: home/alarm/set
+    pending_time: 60
+    trigger_time: 1800
+    disarm_after_trigger: false
+    delay_time: 30
+    armed_home:
+      pending_time: 0
+      delay_time: 0
+    armed_away:
+      pending_time: 60
+      delay_time: 30
+
+panel_custom:
+  - name: react
+    sidebar_title: Example Panel
+    sidebar_icon: mdi:checkbox-marked-outline
+    # url_path: todomvc
+    config:
+      title: Wow hello!
+
+mqtt:
+  broker: core-mosquitto
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+# mqtt:
+  # broker: 192.168.0.104
+  # client_id: 123456789
+  
+# camera:
+#   - platform: rpi_camera
+#     name: RaspberryPi Cam
+#     vertical_flip: 1
+#     horizontal_flip: 1
+#     image_quality: 5
+    #file_path: /tmp/camera.jpg
+    #  - platform: usps
+    #scan_interval: 10
+
+# panel_iframe:
+#   configurator:
+#     title: Configurator
+#     icon: mdi:wrench
+#     url: http://127.0.0.1:3218
+
+# sensor:
+#   platform: example
+
+#usps:
+# username: !secret usps_username
+#  password: !secret usps_password
 
       #android_ip_webcam:
       #  - host: 192.168.0.166
@@ -153,11 +190,3 @@ weblink:
       #      - torch
       #      - video_recording
     # motion_sensor:
-
-panel_custom:
-  - name: react
-    sidebar_title: Example Panel
-    sidebar_icon: mdi:checkbox-marked-outline
-    # url_path: todomvc
-    config:
-      title: Wow hello!
